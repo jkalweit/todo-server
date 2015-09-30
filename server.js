@@ -40,6 +40,12 @@ app.get('/todos/reset', function (req, res) {
     res.send('Reset.');
 });
 
+app.get('/test', function (req, res) {
+    syncServer.resetData(defaultData);
+    res.send('Test response!');
+});
+
+
 var port = process.env.PORT || 1337;
 server.listen(port, function () {
     console.log('Express is listening on %s:%s', server.address().address, server.address().port);
